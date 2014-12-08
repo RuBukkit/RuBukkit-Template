@@ -1,0 +1,27 @@
+# Основная информация о плагине соберётся сама
+name: ${project.artifactId}
+main: ${project.groupId}.${project.artifactId}.Plugin
+version: ${project.version}
+# Автором можно вписать себя либо несколько человек (списком)
+author: RuBukkit
+website: http://www.rubukkit.org
+# Необязательные зависимости (пример)
+softdepend:
+  - Vault
+# Обязательные зависимости (пример)
+depend:
+  - WorldEdit
+  - WorldGuard
+# Зарегистрированные команды
+commands:
+  templatecommand:
+    description: ${project.artifactId} command hub
+    usage: /<command> do what?
+# Зарегистрированные права
+permissions:
+  RUBUKKIT_TEMPLATE.admin:
+    description: Access to all functions
+    default: op
+    children:
+      RUBUKKIT_TEMPLATE.someperm: true
+ 
