@@ -42,9 +42,19 @@
 			<id>sk89q-repo</id>
 			<url>http://maven.sk89q.com/repo/</url>
 		</repository>
+		<repository>
+			<id>dynmap-repo</id>
+			<url>http://repo.mikeprimm.com/</url>
+		</repository>
 	</repositories>
 	
 	<dependencies>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.34</version>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
@@ -57,18 +67,30 @@
 			<version>1.0</version>
 			<scope>provided</scope>
 		</dependency>
-        <dependency>
+        <!--dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>
             <version>1.5</version>
             <scope>provided</scope>
-        </dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.34</version>
-			<scope>runtime</scope>
-		</dependency>
+        </dependency-->
+		<!--dependency>
+			<groupId>com.sk89q</groupId>
+			<artifactId>worldedit</artifactId>
+			<version>6.0.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency-->
+		<!--dependency>
+			<groupId>com.sk89q</groupId>
+			<artifactId>worldguard</artifactId>
+			<version>6.0.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency-->
+		<!--dependency>
+			<groupId>us.dynmap</groupId>
+			<artifactId>dynmap-api</artifactId>
+			<version>2.0.0</version>
+			<scope>provided</scope>
+		</dependency-->
 	</dependencies>
 
 	<build>
