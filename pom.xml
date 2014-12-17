@@ -5,7 +5,7 @@
 	<name>RBTemplate</name>
 	<groupId>org.rubukkit</groupId>
 	<artifactId>template</artifactId>
-	<version>0.2.0b</version>
+	<version>0.2.1</version>
 	<packaging>jar</packaging>
 	<url>https://github.com/RuBukkit/</url>
 	
@@ -25,6 +25,10 @@
 		<repository>
 			<id>spigot-repo</id>
 			<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>metrics-repo</id>
+			<url>http://repo.mcstats.org/content/repositories/public</url>
 		</repository>
 		<repository>
 			<id>vault-repo</id>
