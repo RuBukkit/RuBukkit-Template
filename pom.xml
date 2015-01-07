@@ -5,7 +5,7 @@
 	<name>RBTemplate</name>
 	<groupId>org.rubukkit</groupId>
 	<artifactId>template</artifactId>
-	<version>0.2.3</version>
+	<version>0.2.4</version>
 	<packaging>jar</packaging>
 	<url>https://github.com/RuBukkit/</url>
 	
@@ -154,6 +154,23 @@
 					<excludes>
 						<exclude>.*</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<show>public</show>
+					<nohelp>true</nohelp>
 				</configuration>
 			</plugin>
 		</plugins>
