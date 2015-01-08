@@ -66,6 +66,9 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
 				else
 					sender.sendMessage("You are player! :(");
 				return true;
+			case "testdb":
+				DatabaseExample.test(this, sender);
+				return true;
 		}
 		return false;
 	}
