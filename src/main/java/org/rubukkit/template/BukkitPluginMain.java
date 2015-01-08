@@ -1,4 +1,5 @@
 package org.rubukkit.template;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bukkit.Bukkit;
@@ -7,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.rubukkit.template.examples.*;
 
 public final class BukkitPluginMain extends JavaPlugin implements Listener
 {
@@ -14,6 +16,7 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
 	@Override
 	public void onLoad()
 	{
+		// Если в папке плагина отсутствует config.yml, этот метод берёт его из тела плагина и копирует в папку
 		saveDefaultConfig();
 		consoleLog.log(Level.INFO, "[RBTemplate] Plugin has been loaded.");
 	}
@@ -22,8 +25,15 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
 	{
 		// Register event's dispatcher
 		getServer().getPluginManager().registerEvents(this, this);
-		// Read settings 
-		reloadConfig();
+		try
+		{
+			// Чтение и проверка настроек на корректность
+			reloadConfig();
+			// Пример того, как можно обновлять файл настроек при увеличении версии плагина
+			UpgradeSettingsExample.checkAndProcess(this);
+		} catch(IOException ex) {
+			// Если при проверке файла настроек возникла ошибка...
+		}
 		// Done
 		consoleLog.log(Level.INFO, "[RBTemplate] Plugin has been successfully enabled.");
 	}

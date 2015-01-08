@@ -1,2 +1,9 @@
+settings:
+  connection:
+    hostname: localhost:3306
+    database: minecraft
+    username: user1
+    password: pass1
+    prefixes: 'rubukkit_example_'
 internal:
   version: 1
