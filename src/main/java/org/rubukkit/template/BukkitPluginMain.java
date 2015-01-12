@@ -34,7 +34,6 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
 		} catch(IOException ex) {
 			// Если при проверке файла настроек возникла ошибка...
 		}
-		// Done
 		consoleLog.log(Level.INFO, "[RBTemplate] Plugin has been successfully enabled.");
 	}
 	@Override
