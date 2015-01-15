@@ -41,12 +41,16 @@ public class ExampleProcessCommands
 				return;
 			// Типичная ситуация: перезагрузка плагина
 			case "reload":
-				final PluginManager pluginMan = plugin.getServer().getPluginManager();
-				// В методе onDisable следует сохранить все рабочие данные
-				pluginMan.disablePlugin(plugin);
-				// А в методе onEnable — восстановить их из нужных источников
-				pluginMan.enablePlugin(plugin);
-				throw new CommandAnswerException("§aПлагин успешно перезагружен!");
+				if(sender.hasPermission("rbtmplt.admin"))
+				{
+					final PluginManager pluginMan = plugin.getServer().getPluginManager();
+					// В методе onDisable следует сохранить все рабочие данные
+					pluginMan.disablePlugin(plugin);
+					// А в методе onEnable — восстановить их из нужных источников
+					pluginMan.enablePlugin(plugin);
+					throw new CommandAnswerException("§aПлагин успешно перезагружен!");
+				}
+				throw new CommandAnswerException("§cНет прав! :(");
 			default:
 				break;
 		}
