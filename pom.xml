@@ -9,7 +9,7 @@
 	<!-- Название этого проекта -->
 	<artifactId>template</artifactId>
 	<!-- Текущая версия -->
-	<version>0.2.7</version>
+	<version>0.2.8</version>
 	<!-- Адрес сайта/проекта/персональной странички/чего угодно -->
 	<url>https://github.com/RuBukkit/RuBukkit-Template/</url>
 	

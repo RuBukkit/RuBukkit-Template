@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.rubukkit.template.examples.*;
@@ -48,27 +47,20 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
 	{
-		switch(label.toLowerCase())
+		try
 		{
-			case "rubukkit":
-				sender.sendMessage("Yeah, this is RuBukkit!");
-				return true;
-			case "testperm":
-				if(sender.hasPermission("someperm"))
-					sender.sendMessage("someperm yes! :)");
-				else
-					sender.sendMessage("someperm no! :(");
-				return true;
-			case "testconsole":
-				if(sender instanceof ConsoleCommandSender)
-					sender.sendMessage("You are console! :)");
-				else
-					sender.sendMessage("You are player! :(");
-				return true;
-			case "testdb":
-				DatabaseExample.test(this, sender);
-				return true;
+			switch(label.toLowerCase())
+			{
+				// Для примера существует только одна команда, с различными подкомандами
+				case "rbtmplt":
+					ExampleProcessCommands.processCommandHub(this, sender, args);
+				default:
+					return false;
+			}
+		} catch(CommandAnswerException ex) {
+			// Отправка текста с результатами выполнения команды
+			sender.sendMessage(ex.getMessageArray());
 		}
-		return false;
+		return true;
 	}
 }

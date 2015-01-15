@@ -13,14 +13,17 @@ website: ${project.url}
 #softdepend:
 #  - Vault
 # Зарегистрированные команды
-#commands:
-#  templatecommand:
-#    description: ${project.artifactId} command hub
-#    usage: /<command> do what?
+commands:
+  rbtmplt:
+    description: ${project.artifactId} command hub
+    usage: /<command> do what?
 # Зарегистрированные права
-#permissions:
-#  RUBUKKIT_TEMPLATE.admin:
-#    description: Access to all functions
-#    default: op
-#    children:
-#     RUBUKKIT_TEMPLATE.someperm: true
+permissions:
+  rbtmplt.admin:
+    description: Доступ ко всем функциям плагина без ограничения
+    default: op
+    children:
+     rbtmplt.testperm: true
+  rbtmplt.testperm:
+    description: Для проверки /rbtmplt testperm
+    default: op
