@@ -9,7 +9,7 @@
 	<!-- Название этого проекта -->
 	<artifactId>template</artifactId>
 	<!-- Текущая версия -->
-	<version>0.2.8</version>
+	<version>0.2.9</version>
 	<!-- Адрес сайта/проекта/персональной странички/чего угодно -->
 	<url>https://github.com/RuBukkit/RuBukkit-Template/</url>
 	
@@ -49,6 +49,10 @@
 			<id>dynmap-repo</id>
 			<url>http://repo.mikeprimm.com/</url>
 		</repository>
+		<repository>
+			<id>MinigamesAPI-repo</id>
+			<url>http://www.instancedev.com/bukkitdev/MinigamesAPI/maven/</url>
+		</repository>
 		<!-- Two alternative ProtocolLib repos -->
 		<repository>
 			<id>comphenix-repo</id>
@@ -61,6 +65,7 @@
 	</repositories>
 	
 	<dependencies>
+		<!-- Not-Minecraft related APIs -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -73,6 +78,14 @@
 			<version>2.3.1</version>
 			<scope>provided</scope>
 		</dependency-->
+		<!-- Sponge API -->
+		<dependency>
+			<groupId>org.spongepowered</groupId>
+			<artifactId>spongeapi</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Bukkit API / Spigot / BungeeCord API -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
@@ -91,12 +104,7 @@
 			<version>1.8-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency-->
-		<dependency>
-			<groupId>org.spongepowered</groupId>
-			<artifactId>spongeapi</artifactId>
-			<version>1.0</version>
-			<scope>provided</scope>
-		</dependency>
+		<!-- Common plugins repos -->
 		<!--dependency>
 			<groupId>net.milkbowl.vault</groupId>
 			<artifactId>VaultAPI</artifactId>
@@ -126,6 +134,11 @@
 			<artifactId>ProtocolLib</artifactId>
 			<version>3.6.3-SNAPSHOT</version>
 			<scope>provided</scope>
+		</dependency-->
+		<!--dependency>
+			<groupId>com.comze_instancelabs</groupId>
+			<artifactId>MinigamesLib</artifactId>
+			<version>1.12.0</version>
 		</dependency-->
 	</dependencies>
 	
