@@ -9,7 +9,7 @@
 	<!-- Название этого проекта -->
 	<artifactId>template</artifactId>
 	<!-- Текущая версия -->
-	<version>0.2.9</version>
+	<version>0.2.10</version>
 	<!-- Адрес сайта/проекта/персональной странички/чего угодно -->
 	<url>https://github.com/RuBukkit/RuBukkit-Template/</url>
 	
@@ -72,12 +72,12 @@
 			<version>5.1.34</version>
 			<scope>runtime</scope>
 		</dependency>
-		<!--dependency>
+		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.3.1</version>
-			<scope>provided</scope>
-		</dependency-->
+		 <type>jar</type>
+		</dependency>
 		<!-- Sponge API -->
 		<dependency>
 			<groupId>org.spongepowered</groupId>
@@ -174,6 +174,39 @@
 						<exclude>.*</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<minimizeJar>true</minimizeJar>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+							<artifactSet>
+								<includes>
+									<!-- Google GSON -->
+									<include>com.google.code.gson:gson</include>
+									<!-- mcstats.org Metrics -->
+									<include>org.mcstats.bukkit:metrics-lite</include>
+								</includes>
+							</artifactSet>
+							<relocations>
+								<!-- Представленным ниже образом мы можем "переименовать" посторонний пакет,
+									чтобы его разные версии не "конфликтовали" друг с другом, при наличии -->
+								<relocation>
+									<pattern>com.google.gson</pattern>
+									<shadedPattern>${project.groupId}.${project.artifactId}.com-google-gson-shaded</shadedPattern>
+								</relocation>
+							</relocations>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
