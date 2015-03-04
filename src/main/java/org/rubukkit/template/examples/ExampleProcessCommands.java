@@ -39,6 +39,14 @@ public class ExampleProcessCommands
 			case "testdb":
 				DatabaseExample.test(plugin, sender);
 				return;
+			case "jw":
+				// Пример сериализации какого-то класса в Json строку (файл)
+				JsonSaveLoadExample.testSave(plugin.getDataFolder());
+				return;
+			case "jr":
+				// Пример десериализации какого-то класса из Json строки (файла)
+				JsonSaveLoadExample.testLoad(plugin.getDataFolder());
+				return;
 			// Типичная ситуация: перезагрузка плагина
 			case "reload":
 				if(sender.hasPermission("rbtmplt.admin"))
