@@ -106,6 +106,12 @@
 		</dependency-->
 		<!-- Common plugins repos -->
 		<!--dependency>
+			<groupId>org.mcstats.bukkit</groupId>
+			<artifactId>metrics-lite</artifactId>
+			<version>R8-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency-->
+		<!--dependency>
 			<groupId>net.milkbowl.vault</groupId>
 			<artifactId>VaultAPI</artifactId>
 			<version>1.5</version>
