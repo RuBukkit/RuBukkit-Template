@@ -1,4 +1,5 @@
 package org.rubukkit.template.examples;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

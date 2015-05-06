@@ -1,4 +1,5 @@
 package org.rubukkit.template.examples;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;

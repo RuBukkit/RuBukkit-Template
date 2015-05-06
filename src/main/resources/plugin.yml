@@ -1,9 +1,9 @@
 # Основная информация о плагине
 # Получается из pom.xml при сборке, поэтому не удаляйте из него упомянутые здесь поля
-name: ${project.artifactId}
-main: ${project.groupId}.${project.artifactId}.BukkitPluginMain
+name:    ${project.artifactId}
+main:    ${project.groupId}.${project.artifactId}.BukkitPluginMain
 version: ${project.version}
-author: rubukkit.org
+author:  rubukkit.org
 website: ${project.url}
 # Обязательные зависимости (пример)
 #depend:

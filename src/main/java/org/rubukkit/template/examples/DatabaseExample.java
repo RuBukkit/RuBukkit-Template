@@ -1,4 +1,5 @@
 package org.rubukkit.template.examples;
+
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.rubukkit.template.BukkitPluginMain;

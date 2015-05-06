@@ -1,4 +1,5 @@
 package org.rubukkit.template.examples;
+
 import java.util.List;
 
 public class CommandAnswerException extends Exception

@@ -1,4 +1,5 @@
 package org.rubukkit.template.examples;
+
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginManager;

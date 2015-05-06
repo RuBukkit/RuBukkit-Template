@@ -1,4 +1,5 @@
 package org.rubukkit.template;
+
 import org.spongepowered.api.event.state.ServerAboutToStartEvent;
 import org.spongepowered.api.event.state.ServerStartedEvent;
 import org.spongepowered.api.event.state.ServerStartingEvent;
