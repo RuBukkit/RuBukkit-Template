@@ -62,6 +62,13 @@
 			<id>shadowvolt-repo</id>
 			<url>http://ci.shadowvolt.com/plugin/repository/everything/</url>
 		</repository>
+		<!-- BarAPI -->
+		<repositories>
+			<repository>
+				<id>confuser-repo</id>
+				<url>http://ci.frostcast.net/plugin/repository/everything</url>
+			</repository>
+		</repositories>
 	</repositories>
 	
 	<dependencies>
@@ -145,6 +152,11 @@
 			<groupId>com.comze_instancelabs</groupId>
 			<artifactId>MinigamesLib</artifactId>
 			<version>1.12.0</version>
+		</dependency-->
+		<!--dependency>
+			<groupId>me.confuser</groupId>
+			<artifactId>BarAPI</artifactId>
+			<version>3.0</version>
 		</dependency-->
 	</dependencies>
 	
