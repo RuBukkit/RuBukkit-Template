@@ -67,6 +67,11 @@
 			<id>confuser-repo</id>
 			<url>http://ci.frostcast.net/plugin/repository/everything</url>
 		</repository>
+		<!-- Репозиторий Reality_SC -->
+		<repository>
+			<id>methuselah-repo</id>
+			<url>http://maven.methuselah.ru/</url>
+		</repository>
 	</repositories>
 	
 	<dependencies>
@@ -83,6 +88,11 @@
 			<version>2.3.1</version>
 			<scope>compile</scope>
 		</dependency>
+		<!--dependency>
+			<groupId>ru.simsonic</groupId>
+			<artifactId>rscUtilityLibrary</artifactId>
+			<version>2.0.4</version>
+		</dependency-->
 		<!-- Sponge API -->
 		<dependency>
 			<groupId>org.spongepowered</groupId>
