@@ -63,12 +63,10 @@
 			<url>http://ci.shadowvolt.com/plugin/repository/everything/</url>
 		</repository>
 		<!-- BarAPI -->
-		<repositories>
-			<repository>
-				<id>confuser-repo</id>
-				<url>http://ci.frostcast.net/plugin/repository/everything</url>
-			</repository>
-		</repositories>
+		<repository>
+			<id>confuser-repo</id>
+			<url>http://ci.frostcast.net/plugin/repository/everything</url>
+		</repository>
 	</repositories>
 	
 	<dependencies>
