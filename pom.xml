@@ -53,14 +53,10 @@
 			<id>MinigamesAPI-repo</id>
 			<url>http://www.instancedev.com/bukkitdev/MinigamesAPI/maven/</url>
 		</repository>
-		<!-- Two alternative ProtocolLib repos -->
+		<!-- ProtocolLib repo -->
 		<repository>
-			<id>comphenix-repo</id>
-			<url>http://repo.comphenix.net/content/groups/public/</url>
-		</repository>
-		<repository>
-			<id>shadowvolt-repo</id>
-			<url>http://ci.shadowvolt.com/plugin/repository/everything/</url>
+			<id>dmulloy2-repo</id>
+			<url>http://repo.dmulloy2.net/content/groups/public/</url>
 		</repository>
 		<!-- BarAPI -->
 		<repository>
@@ -160,7 +156,7 @@
 		<!--dependency>
 			<groupId>com.comphenix.protocol</groupId>
 			<artifactId>ProtocolLib</artifactId>
-			<version>3.6.3-SNAPSHOT</version>
+			<version>3.6.4</version>
 			<scope>provided</scope>
 		</dependency-->
 		<!--dependency>
@@ -214,7 +210,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.3</version>
+				<version>2.4.1</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
