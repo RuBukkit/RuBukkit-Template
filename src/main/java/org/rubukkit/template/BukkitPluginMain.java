@@ -15,6 +15,8 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
 {
 	public static final Logger consoleLog = Bukkit.getLogger();
 	public static final String pluginNameShort = "rbtmplt";
+	public static Economy economy = null;
+	private static boolean usingeconomy = false;
 	@Override
 	public void onLoad()
 	{
@@ -43,6 +45,8 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
 	{
 		// Save settings
 		saveConfig();
+		//Инициализация Vault Экономики
+		this.initializeVault();
 		// Unregister all event listeners
 		getServer().getServicesManager().unregisterAll(this);
 		consoleLog.log(Level.INFO, "[{0}] Plugin has been disabled.", getDescription().getName());
@@ -82,4 +86,32 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
 		// Если кто-то выбросил исключение, значит команды всё-таки обработались! true
 		return true;
 	}
+
+   private boolean setupEconomy()
+   {
+       RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
+       if (economyProvider != null) {
+           economy = economyProvider.getProvider();
+       }
+
+       return (economy != null);
+   }   
+   
+   private void initializeVault() {
+	if (Bukkit.getServer().getPluginManager().getPlugin("Vault") != null) {
+		Bukkit.getConsoleSender().sendMessage("[{0}] §2Found Vault. Searching for economy plugin", getDescription().getName());
+		if(this.setupEconomy()) {
+			Bukkit.getConsoleSender().sendMessage("[{0}] §2Found [{1}] plugin. Pricing suppord enabled!", getDescription().getName(), economy.getName());
+			usingeconomy = true;
+		} else {
+			Bukkit.getConsoleSender().sendMessage("[{0}] §cEconomy plugin not found! Economy support disabled!", getDescription().getName());
+			usingeconomy = false;
+		}
+	} else {
+		Bukkit.getConsoleSender().sendMessage("[{0}] §cVault not found! Economy support disabled!", getDescription().getName());
+		usingeconomy = false;
+	}
+   }   
+
+	
 }
