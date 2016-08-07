@@ -10,8 +10,8 @@ website: ${project.url}
 #  - WorldEdit
 #  - WorldGuard
 # Необязательные зависимости (пример)
-#softdepend:
-#  - Vault
+softdepend:
+  - Vault
 # Зарегистрированные команды
 commands:
   rbtmplt:
