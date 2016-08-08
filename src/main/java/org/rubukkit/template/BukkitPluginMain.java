@@ -10,6 +10,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.rubukkit.template.examples.*;
+import org.bukkit.plugin.RegisteredServiceProvider;
+
+import net.milkbowl.vault.economy.Economy;
 
 public final class BukkitPluginMain extends JavaPlugin implements Listener
 {
@@ -99,16 +102,16 @@ public final class BukkitPluginMain extends JavaPlugin implements Listener
    
    private void initializeVault() {
 	if (Bukkit.getServer().getPluginManager().getPlugin("Vault") != null) {
-		Bukkit.getConsoleSender().sendMessage("[{0}] §2Found Vault. Searching for economy plugin", getDescription().getName());
+		Bukkit.getConsoleSender().sendMessage("["+pluginNameShort+"] §2Found Vault. Searching for economy plugin");
 		if(this.setupEconomy()) {
-			Bukkit.getConsoleSender().sendMessage("[{0}] §2Found [{1}] plugin. Pricing suppord enabled!", getDescription().getName(), economy.getName());
+			Bukkit.getConsoleSender().sendMessage("["+pluginNameShort+"] §2Found ["+economy.getName()+"] plugin. Pricing suppord enabled!");
 			usingeconomy = true;
 		} else {
-			Bukkit.getConsoleSender().sendMessage("[{0}] §cEconomy plugin not found! Economy support disabled!", getDescription().getName());
+			Bukkit.getConsoleSender().sendMessage("["+pluginNameShort+"] §cEconomy plugin not found! Economy support disabled!");
 			usingeconomy = false;
 		}
 	} else {
-		Bukkit.getConsoleSender().sendMessage("[{0}] §cVault not found! Economy support disabled!", getDescription().getName());
+		Bukkit.getConsoleSender().sendMessage("["+pluginNameShort+"] §cVault not found! Economy support disabled!)";
 		usingeconomy = false;
 	}
    }   
