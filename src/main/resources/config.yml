@@ -6,4 +6,4 @@ settings:
     password: 'pass1'
     prefixes: 'rubukkit_example_'
 internal:
-  version: 1
+  version: 3

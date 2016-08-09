@@ -1,10 +1,14 @@
-package org.rubukkit.template.examples;
+package org.rubukkit.template.API;
 
 import java.util.List;
 
 public class CommandAnswerException extends Exception
 {
 	private final String[] lines;
+	public CommandAnswerException()
+	{
+		this.lines = new String[] {};
+	}
 	public CommandAnswerException(String message)
 	{
 		this.lines = new String[] { message };

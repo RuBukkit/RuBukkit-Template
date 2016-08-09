@@ -5,6 +5,7 @@ main:    ${project.groupId}.${project.artifactId}.BukkitPluginMain
 version: ${project.version}
 author:  rubukkit.org
 website: ${project.url}
+
 # Обязательные зависимости (пример)
 #depend:
 #  - WorldEdit
@@ -12,11 +13,13 @@ website: ${project.url}
 # Необязательные зависимости (пример)
 softdepend:
   - Vault
+
 # Зарегистрированные команды
 commands:
   rbtmplt:
     description: ${project.artifactId} command hub
     usage: /<command> do what?
+
 # Зарегистрированные права
 permissions:
   rbtmplt.admin:
