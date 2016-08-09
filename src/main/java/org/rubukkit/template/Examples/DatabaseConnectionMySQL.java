@@ -1,4 +1,4 @@
-package org.rubukkit.template.examples;
+package org.rubukkit.template.Examples;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,7 +37,7 @@ public class DatabaseConnectionMySQL
 			statement  = connection.createStatement();
 			return true;
 		} catch(SQLException | ClassNotFoundException | NullPointerException ex) {
-			BukkitPluginMain.consoleLog.log(Level.WARNING, "Exception in database connection to {0}:\n{1}",
+			plugin.logger.log(Level.WARNING, "Exception in database connection to {0}:\n{1}",
 				new Object[] { hostname, ex });
 			disconnect();
 		}
@@ -73,7 +73,7 @@ public class DatabaseConnectionMySQL
 			final ResultSet result = statement.executeQuery(query);
 			return result;
 		} catch(SQLException ex) {
-			BukkitPluginMain.consoleLog.log(Level.WARNING, "Exception in executeQuery:\n{0}", ex);
+			plugin.logger.log(Level.WARNING, "Exception in executeQuery:\n{0}", ex);
 		}
 		return null;
 	}
@@ -83,7 +83,7 @@ public class DatabaseConnectionMySQL
 		{
 			return statement.execute(query);
 		} catch(SQLException ex) {
-			BukkitPluginMain.consoleLog.log(Level.WARNING, "Exception in executeUpdate:\n{0}", ex);
+			plugin.logger.log(Level.WARNING, "Exception in executeUpdate:\n{0}", ex);
 		}
 		return false;
 	}
