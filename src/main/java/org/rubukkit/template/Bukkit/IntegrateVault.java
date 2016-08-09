@@ -24,6 +24,11 @@ public class IntegrateVault
 		this.economy = null;
 		this.permission = null;
 	}
+	/**
+	 * Если Vault установлен на сервере и включён, а также имеется какой-нибудь плагин,
+	 * предоставляющий нужный интерфейс, он будет возвращён, иначе будет возвращено null.
+	 * @return net.milkbowl.vault.chat.Chat
+	 */
 	public Chat getVaultChat()
 	{
 		if(chat == null)
@@ -41,6 +46,11 @@ public class IntegrateVault
 		}
 		return chat;
 	}
+	/**
+	 * Если Vault установлен на сервере и включён, а также имеется какой-нибудь плагин,
+	 * предоставляющий нужный интерфейс, он будет возвращён, иначе будет возвращено null.
+	 * @return net.milkbowl.vault.economy.Economy
+	 */
 	public Economy getVaultEconomy()
 	{
 		if(economy == null)
@@ -58,6 +68,11 @@ public class IntegrateVault
 		}
 		return economy;
 	}
+	/**
+	 * Если Vault установлен на сервере и включён, а также имеется какой-нибудь плагин,
+	 * предоставляющий нужный интерфейс, он будет возвращён, иначе будет возвращено null.
+	 * @return net.milkbowl.vault.permission.Permission
+	 */
 	public Permission getVaultPermission()
 	{
 		if(permission == null)

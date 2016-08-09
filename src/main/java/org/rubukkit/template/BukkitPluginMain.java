@@ -45,6 +45,7 @@ public final class BukkitPluginMain extends JavaPlugin
 	@Override
 	public void onDisable()
 	{
+		vaultAPI.onDisable();
 		// Отмена регистрации всех обработчиков событий
 		getServer().getServicesManager().unregisterAll(this);
 		// Отмена всех назначенных на будущее блоков кода
